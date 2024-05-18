@@ -1,0 +1,22 @@
+program ::= term
+
+term ::= command
+        | var_init
+        | string_init
+        | push_symbol
+        | term term
+
+command ::= "NOP" | "MOD" | "+" | "-" | "*" | "/" | "<" | "NEGATE" | "INVERT" | "POW"
+            | "DUP" | "OVER" | "ROT" | "SWAP" | "DROP"
+            | "INTERRUPT" | "INTERRUPT_END"
+            | "IF" | "ELSE" | "ENDIF"
+            | "WHILE" | "BEGIN" | "REPEAT"
+            | "READ" | "READ#" | "WR" | "WR#"
+
+push_symbol = [-2^31; 2^31], ["a"; "z"]
+
+string_init = (string_name): string_value
+
+var_init ::= var_name: var_value
+                | &string_name
+

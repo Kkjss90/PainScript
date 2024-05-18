@@ -1,0 +1,84 @@
+(prompt): What is your name?
+prompt_start: &prompt
+prompt_end: 127
+
+prompt_start
+prompt_end
+WR
+BEGIN
+    prompt_end
+    READ#
+    0
+    OVER
+    <
+WHILE
+    #out
+    WR
+REPEAT
+
+200
+BEGIN
+    #in
+    READ
+    DUP
+    0
+    OVER
+    <
+WHILE
+    OVER
+    1
+    +
+REPEAT
+DROP
+DROP
+
+(greeting): Hello,
+greeting_start: &greeting
+greeting_end: 127
+
+greeting_start
+greeting_end
+WR
+
+BEGIN
+    greeting_end
+    READ#
+    0
+    OVER
+    <
+WHILE
+    #out
+    WR
+REPEAT
+
+# Reading the name
+name_start: 200
+name_end: 300
+BEGIN
+    name_end
+    READ#
+    0
+    OVER
+    <
+WHILE
+    #out
+    WR
+REPEAT
+
+(exclamation): !
+exclamation_start: &exclamation
+exclamation_end: 127
+
+exclamation_start
+exclamation_end
+WR
+BEGIN
+    exclamation_end
+    READ#
+    0
+    OVER
+    <
+WHILE
+    #out
+    WR
+REPEAT
